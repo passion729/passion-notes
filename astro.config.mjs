@@ -8,7 +8,7 @@ export default defineConfig({
 		starlight({
 			title: "Passion's Notes",
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/passion729/passion-notes',
 			},
 			sidebar: [
 				{
