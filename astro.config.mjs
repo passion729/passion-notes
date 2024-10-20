@@ -6,7 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: "Passion's Notes",
 			social: {
 				github: 'https://github.com/withastro/starlight',
 			},
@@ -23,6 +23,16 @@ export default defineConfig({
 					autogenerate: { directory: 'reference' },
 				},
 			],
+            locales: {
+                'root': {
+                    label: 'English',
+                    lang: 'en',
+                },
+                'zh-CN': {
+                    label: '简体中文',
+                },
+            },
+            credits: true,
 		}),
 	],
 });
