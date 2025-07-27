@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
     title: "Passion's Notes",
     tagline: 'Dinosaurs are cool',
-    favicon: 'img/favicon.ico',
+    favicon: 'img/Snoopy.png',
     // themes: ['@docusaurus/theme-search-algolia'],
     plugins: ["./src/plugins/tailwind-config.ts"],
     // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -68,7 +68,7 @@ const config: Config = {
             title: "Passion's Notes",
             logo: {
                 alt: 'My Site Logo',
-                src: 'img/logo.svg',
+                src: 'img/Snoopy.png',
             },
             items: [
                 {
