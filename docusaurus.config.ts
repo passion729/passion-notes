@@ -67,7 +67,7 @@ const config: Config = {
         navbar: {
             title: "Passion's Notes",
             logo: {
-                alt: 'My Site Logo',
+                alt: "Snoopy",
                 src: 'img/Snoopy.png',
             },
             items: [
@@ -95,8 +95,8 @@ const config: Config = {
             copyright: `Copyright © ${ new Date().getFullYear() } Passion. Built with Docusaurus.`,
         },
         prism: {
-            theme: prismThemes.github,
-            darkTheme: prismThemes.dracula,
+            theme: prismThemes.nightOwlLight,
+            darkTheme: prismThemes.oceanicNext,
         },
         algolia: {
             // The application ID provided by Algolia
