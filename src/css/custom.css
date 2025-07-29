@@ -16,6 +16,7 @@
     --ifm-color-primary-light: #5198a3;
     --ifm-color-primary-lighter: #559faa;
     --ifm-color-primary-lightest: #6babb5;
+    --ifm-color-footer: #F0F2F5;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -28,6 +29,12 @@
     --ifm-color-primary-light: #83bfc7;
     --ifm-color-primary-lighter: #8dc4cc;
     --ifm-color-primary-lightest: #acd4da;
+    --ifm-color-footer: #1F242D;
+}
+
+p {
+    font-size: 1.1rem;
+    font-weight: 450;
 }
 
 /* sidebar indent line */
@@ -50,6 +57,8 @@
 
 .footer {
     padding: 1rem 0;
+    background-color: var(--ifm-color-footer);
+    color: var(--ifm-color-emphasis-700);
 }
 
 .markdown {
