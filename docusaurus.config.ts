@@ -50,6 +50,9 @@ const config: Config = {
     ],
 
     themeConfig: {
+        metadata: [
+            { name: "algolia-site-verification", content: "E5C7FE05294B835B"},
+        ],
         // Replace with your project's social card
         image: 'img/docusaurus-social-card.jpg',
         colorMode: {
