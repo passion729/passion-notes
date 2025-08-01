@@ -19,6 +19,8 @@
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
     --admonition-tip-bg: #e3f2fd;
+    --admonition-note-bg: #6aadb740;
+    --admonition-note-border: #6aadb7;
     --admonition-danger-bg: #ffebee;
     --admonition-warning-bg: #fff8e1;
 }
@@ -36,6 +38,8 @@
 
     --admonition-tip-bg: #0a6b5f;
     --admonition-tip-border: #1BBC9B;
+    --admonition-note-bg: #6aadb740;
+    --admonition-note-border: #6aadb7;
     --admonition-danger-bg: #1a0e0e;
     --admonition-warning-bg: #1f1611;
 }
@@ -109,4 +113,17 @@ p {
 
 .menu__list-item-collapsible .menu__link {
     font-weight: 700;
+}
+
+.theme-admonition-note {
+    border-left: 3px solid var(--admonition-note-border);
+    background-color: var(--admonition-note-bg);
+}
+
+.code-block-highlight-line {
+    background-color: #6eb4be30;
+    display: block;
+    margin: 0 calc(-1 * var(--ifm-pre-padding));
+    padding: 0 var(--ifm-pre-padding);
+    border-left: 3px solid #6eb4be90;
 }

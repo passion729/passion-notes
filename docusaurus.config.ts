@@ -51,11 +51,12 @@ const config: Config = {
 
     themeConfig: {
         metadata: [
-            { name: "algolia-site-verification", content: "E5C7FE05294B835B"},
+            { name: "algolia-site-verification", content: "E5C7FE05294B835B" },
         ],
         // Replace with your project's social card
         image: 'img/docusaurus-social-card.jpg',
         colorMode: {
+            defaultMode: 'dark',
             respectPrefersColorScheme: true,
         },
         navbar: {
@@ -91,6 +92,18 @@ const config: Config = {
         prism: {
             theme: prismThemes.nightOwlLight,
             darkTheme: prismThemes.oceanicNext,
+            additionalLanguages: ['rust'],
+            magicComments: [
+                {
+                    className: 'code-block-highlight-line',
+                    line: 'highlight-next-line',
+                    block: {start: 'hls', end: 'hle'},
+                },
+                {
+                    className: 'code-block-highlight-line',
+                    line: 'hl',
+                }
+            ]
         },
         algolia: {
             // The application ID provided by Algolia
