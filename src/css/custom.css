@@ -127,3 +127,11 @@ p {
     padding: 0 var(--ifm-pre-padding);
     border-left: 3px solid #6eb4be90;
 }
+
+.table-of-contents__link {
+    font-size: 0.9rem;
+}
+
+hr {
+    background-color: var(--ifm-toc-border-color);
+}

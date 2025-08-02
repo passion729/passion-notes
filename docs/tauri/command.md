@@ -9,8 +9,13 @@ Just add a function and annotate it with `#[tauri::command]`:
 ```rust title="src-tauri/src/lib.rs"
 // hl
 #[tauri::command]
-fn my_custom_command() {
-  println!("I was invoked from JavaScript!");
+fn cmd_a() {
+  println!("Command a");
+}
+
+#[tauri::command]
+fn cmd_b() -> String {
+  "Command b"
 }
 ```
 
@@ -20,13 +25,14 @@ And register command into builder:
 pub fn run() {
   tauri::Builder::default()
     // hl
-    .invoke_handler(tauri::generate_handler![my_custom_command])
+    .invoke_handler(tauri::generate_handler![my_custom_command, cmd_a, cmd_b])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }
 ```
 
 :::note
+- The `tauri::generate_handler!` macro takes an array of commands. To register multiple commands, you cannot call invoke_handler multiple times. Only the last call will be used. **You must pass each command to a single call of `tauri::generate_handler!`**.
 - When defining commands in a separate module they should be marked as `pub`.
 - But while a command is defined in `lib.rs`, it cannot be marked as `pub`.
 - The command name must be unique.

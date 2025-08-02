@@ -7,7 +7,7 @@ tags: [梯子]
 ## VMESS/Torjan
 [boy233一键安装脚本通杀](https://github.com/233boy/sing-box)
 
-```bash
+```shell
 bash <(wget -qO- -o- https://github.com/233boy/sing-box/raw/main/install.sh)
 ```
 
@@ -23,7 +23,7 @@ bash <(curl -fsSL snell-ten.vercel.app)
 
 ## Hysteria2
 使用官方脚本
-```bash
+```shell
 # 安装
 bash <(curl -fsSL https://get.hy2.sh/)
 
@@ -31,7 +31,7 @@ bash <(curl -fsSL https://get.hy2.sh/)
 bash <(curl -fsSL https://get.hy2.sh/) --remove
 ```
 写入自签证书
-```bash
+```shell
 # 伪装域名使用bing.com
 openssl req -x509 -nodes -newkey ec:<(openssl ecparam -name prime256v1) -keyout /etc/hysteria/server.key -out /etc/hysteria/server.crt -subj "/CN=bing.com" -days 36500 && sudo chown hysteria /etc/hysteria/server.key && sudo chown hysteria /etc/hysteria/server.crt
 ```
@@ -60,12 +60,12 @@ bandwidth:
   down: 30 mbps       # 按需修改
 ```
 重启服务
-```bash
+```shell
 systemctl enable hysteria-server.service
 systemctl restart hysteria-server.service
 ```
 配置端口跳跃, 应对运营商UDP QoS端口限速和阻断 [官方文档](https://v2.hysteria.network/zh/docs/advanced/Port-Hopping/)
-```bash
+```shell
 # 修改端口范围和服务监听端口
 # IPv4
 iptables -t nat -A PREROUTING -i eth0 -p udp --dport 20000:50000 -j REDIRECT --to-ports 443
