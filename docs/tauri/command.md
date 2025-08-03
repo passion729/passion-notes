@@ -4,6 +4,22 @@ sidebar_position: 1
 
 # Command
 [Related tauri docs](https://tauri.app/develop/calling-rust/)
+```mermaid
+sequenceDiagram
+    participant a as WebView Frontend
+    participant b as Core Backend
+    participant c as Invoke Handler
+    
+    a-->>b: IPC Request
+    b-->>c: Invoke Command
+    c-->>b: Serialize return
+    b-->>a: Response
+```
+
+:::note
+`invoke` command, is similar to the browser’s fetch API and allows the Frontend to invoke Rust functions, pass arguments, and receive data.
+:::
+
 ## Basic
 Just add a function and annotate it with `#[tauri::command]`:
 ```rust title="src-tauri/src/lib.rs"

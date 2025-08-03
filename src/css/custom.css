@@ -39,7 +39,7 @@
     --admonition-tip-bg: #0a6b5f;
     --admonition-tip-border: #1BBC9B;
     --admonition-note-bg: #6aadb740;
-    --admonition-note-border: #6aadb7;
+    --admonition-note-border: #7eb7bf;
     --admonition-danger-bg: #1a0e0e;
     --admonition-warning-bg: #1f1611;
 }
@@ -116,8 +116,18 @@ p {
 }
 
 .theme-admonition-note {
-    border-left: 3px solid var(--admonition-note-border);
+    border-left: 5px solid var(--admonition-note-border);
     background-color: var(--admonition-note-bg);
+}
+
+.theme-admonition-info {
+    border-left: 5px solid #CBCCD0FF;
+    background-color: #454547;
+}
+
+.theme-admonition-warning {
+    border-left: 5px solid #dca00590;
+    background-color: #4b370370;
 }
 
 .code-block-highlight-line {
