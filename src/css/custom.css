@@ -138,6 +138,14 @@ p {
     border-left: 3px solid #6eb4be90;
 }
 
+.code-block-add-line {
+    background-color: #213227;
+    display: block;
+    margin: 0 calc(-1 * var(--ifm-pre-padding));
+    padding: 0 var(--ifm-pre-padding);
+    border-left: 3px solid #1ba04b;
+}
+
 .table-of-contents__link {
     font-size: 0.9rem;
 }

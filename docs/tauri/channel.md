@@ -16,7 +16,8 @@ use tauri::ipc::Channel;
 
 #[tauri::command]
 fn dual_channel_task(
-// the channel name in frontend is the parameter name use snake case
+
+// channel is a command paramenter as same as common tauri commands parameters
 // on_progress -> onProgress
 // on_logs -> onLogs
 // hls
@@ -59,8 +60,7 @@ async function handleDualChannels() {
         appendToLogArea(logMessage);
     };
 
-    // 传递给command
-    // map frontend channel to backend channel
+    // bind channel to parameter
     await invoke('dual_channel_task', {
         // hls
         onProgress: progressChannel,
@@ -68,17 +68,6 @@ async function handleDualChannels() {
         // hle
     });
 }
-```
-
-```typescript
-    // if the channel name defined in frontend is the the same as parameter in snake case, can skip this
-    // example can skip the channl name map
-    const onProgress = new Channel();
-    const onLogs = new Channel();
-    await invoke('dual_channel_task', {
-        onProgress,
-        onLogs
-    });
 ```
 
 A practical use case: a file download command.
@@ -132,38 +121,38 @@ fn download(
 import { invoke, Channel } from '@tauri-apps/api/core';
 
 type DownloadEvent =
-  | {
-      event: 'started';
-      data: {
+    | {
+    event: 'started';
+    data: {
         url: string;
         downloadId: number;
         contentLength: number;
-      };
-    }
-  | {
-      event: 'progress';
-      data: {
+    };
+}
+    | {
+    event: 'progress';
+    data: {
         downloadId: number;
         chunkLength: number;
-      };
-    }
-  | {
-      event: 'finished';
-      data: {
-        downloadId: number;
-      };
     };
+}
+    | {
+    event: 'finished';
+    data: {
+        downloadId: number;
+    };
+};
 
 const onEvent = new Channel<DownloadEvent>();
 onEvent.onmessage = (message) => {
-  console.log(`got download event ${message.event}`);
+    console.log(`got download event ${ message.event }`);
 };
 
 await invoke('download', {
-  url: 'https://raw.githubusercontent.com/tauri-apps/tauri/dev/crates/tauri-schema-generator/schemas/config.schema.json',
+    url: 'https://raw.githubusercontent.com/tauri-apps/tauri/dev/crates/tauri-schema-generator/schemas/config.schema.json',
     // skip map the channel
     //hl
-  onEvent,
+    onEvent,
 });
 ```
 
