@@ -3,6 +3,8 @@ sidebar_position: 2
 ---
 
 # Event
+[Related tauri docs](https://tauri.app/develop/calling-frontend/#event-system)
+
 ```mermaid
 sequenceDiagram
     participant a as WebView Frontend
@@ -108,7 +110,7 @@ listen(
 In Tauri events, **_if you emit an event before setting up a listener, the event data will be lost_**.
 Tauri's event system works on a publish-subscribe pattern where events are dispatched immediately when emitted. If no listeners are registered at the time of emission, the event simply gets discarded - there's no built-in queuing or buffering mechanism.
 
-Some common solutions to handle this timing issue can refer to [this article](./tauri-event-timing)
+Some common solutions to handle this timing issue can refer to [this section](./event#event-listening-order)
 :::
 
 ### Remember to `unlisten`
@@ -243,4 +245,10 @@ app.once("ready", |event| {
 });
 ```
 
+## Event listening order
+In Tauri events, **_if you emit an event before setting up a listener, the event data will be lost_**. 
+Tauri's event system works on a publish-subscribe pattern where events are dispatched immediately when emitted. If no listeners are registered at the time of emission, the event simply gets discarded-there's no built-in queuing or buffering mechanism.
 
+Some common solutions to handle this timing issue listed below.
+
+Working in progress...
