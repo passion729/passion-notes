@@ -157,4 +157,6 @@ await invoke('download', {
 ```
 
 ## Lifecycle of channels
+
+[//]: # (TODO)
 working in progress...

@@ -251,4 +251,5 @@ Tauri's event system works on a publish-subscribe pattern where events are dispa
 
 Some common solutions to handle this timing issue listed below.
 
+[//]: # (TODO)
 Working in progress...
