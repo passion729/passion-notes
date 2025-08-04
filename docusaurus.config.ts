@@ -113,6 +113,11 @@ const config: Config = {
                     line: 'add',
                     block: { start: 'adds', end: 'adde' }
                 },
+                {
+                    className: 'code-block-removed-line',
+                    line: 'del',
+                    block: { start: 'dels', end: 'dele' }
+                },
             ]
         },
         algolia: {
