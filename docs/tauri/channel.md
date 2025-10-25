@@ -5,6 +5,17 @@ sidebar_position: 3
 # Channel
 [Related tauri docs](https://tauri.app/develop/calling-frontend/#channels)
 
+```mermaid
+block-beta
+    columns 9
+    Backend
+    blockArrowId<[" "]>(right)
+    block:channel:5
+        a["..."] b["0x04"] c["0x03"] d["0x02"] e["0x01"]
+    end
+    left<[" "]>(right)Frontend
+```
+
 The event system is designed to be a simple two way communication that is globally available in your application. Under the hood it directly evaluates JavaScript code so it might not be suitable to sending a large amount of data.
 
 Channels are designed to be fast and deliver ordered data. They are used internally for streaming operations such as download progress, child process output and WebSocket messages.
@@ -16,7 +27,8 @@ use tauri::ipc::Channel;
 
 #[tauri::command]
 fn dual_channel_task(
-// the channel name in frontend is the parameter name use snake case
+
+// channel is a command paramenter as same as common tauri commands parameters
 // on_progress -> onProgress
 // on_logs -> onLogs
 // hls
@@ -59,8 +71,7 @@ async function handleDualChannels() {
         appendToLogArea(logMessage);
     };
 
-    // 传递给command
-    // map frontend channel to backend channel
+    // bind channel to parameter
     await invoke('dual_channel_task', {
         // hls
         onProgress: progressChannel,
@@ -68,17 +79,6 @@ async function handleDualChannels() {
         // hle
     });
 }
-```
-
-```typescript
-    // if the channel name defined in frontend is the the same as parameter in snake case, can skip this
-    // example can skip the channl name map
-    const onProgress = new Channel();
-    const onLogs = new Channel();
-    await invoke('dual_channel_task', {
-        onProgress,
-        onLogs
-    });
 ```
 
 A practical use case: a file download command.
@@ -132,40 +132,42 @@ fn download(
 import { invoke, Channel } from '@tauri-apps/api/core';
 
 type DownloadEvent =
-  | {
-      event: 'started';
-      data: {
+    | {
+    event: 'started';
+    data: {
         url: string;
         downloadId: number;
         contentLength: number;
-      };
-    }
-  | {
-      event: 'progress';
-      data: {
+    };
+}
+    | {
+    event: 'progress';
+    data: {
         downloadId: number;
         chunkLength: number;
-      };
-    }
-  | {
-      event: 'finished';
-      data: {
-        downloadId: number;
-      };
     };
+}
+    | {
+    event: 'finished';
+    data: {
+        downloadId: number;
+    };
+};
 
 const onEvent = new Channel<DownloadEvent>();
 onEvent.onmessage = (message) => {
-  console.log(`got download event ${message.event}`);
+    console.log(`got download event ${ message.event }`);
 };
 
 await invoke('download', {
-  url: 'https://raw.githubusercontent.com/tauri-apps/tauri/dev/crates/tauri-schema-generator/schemas/config.schema.json',
+    url: 'https://raw.githubusercontent.com/tauri-apps/tauri/dev/crates/tauri-schema-generator/schemas/config.schema.json',
     // skip map the channel
     //hl
-  onEvent,
+    onEvent,
 });
 ```
 
 ## Lifecycle of channels
+
+[//]: # (TODO)
 working in progress...

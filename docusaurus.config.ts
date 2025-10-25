@@ -105,13 +105,19 @@ const config: Config = {
             magicComments: [
                 {
                     className: 'code-block-highlight-line',
-                    line: 'highlight-next-line',
+                    line: 'hl',
                     block: {start: 'hls', end: 'hle'},
                 },
                 {
-                    className: 'code-block-highlight-line',
-                    line: 'hl',
-                }
+                    className: 'code-block-add-line',
+                    line: 'add',
+                    block: { start: 'adds', end: 'adde' }
+                },
+                {
+                    className: 'code-block-removed-line',
+                    line: 'del',
+                    block: { start: 'dels', end: 'dele' }
+                },
             ]
         },
         algolia: {
