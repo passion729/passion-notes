@@ -5,6 +5,17 @@ sidebar_position: 3
 # Channel
 [Related tauri docs](https://tauri.app/develop/calling-frontend/#channels)
 
+```mermaid
+block-beta
+    columns 9
+    Backend
+    blockArrowId<[" "]>(right)
+    block:channel:5
+        a["..."] b["0x04"] c["0x03"] d["0x02"] e["0x01"]
+    end
+    left<[" "]>(right)Frontend
+```
+
 The event system is designed to be a simple two way communication that is globally available in your application. Under the hood it directly evaluates JavaScript code so it might not be suitable to sending a large amount of data.
 
 Channels are designed to be fast and deliver ordered data. They are used internally for streaming operations such as download progress, child process output and WebSocket messages.
