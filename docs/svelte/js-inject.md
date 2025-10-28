@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Local js file inject as npm package
+# Inject local js file as npm package
 This method has been tested in React, Vue and Svelte.
 
 All the packages released by iife CDN can use the same operation.
