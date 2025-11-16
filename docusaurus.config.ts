@@ -16,6 +16,9 @@ const config: Config = {
 
     markdown :{
         mermaid: true,
+        hooks: {
+            onBrokenMarkdownLinks: "warn"
+        }
     },
     themes: ['@docusaurus/theme-mermaid'],
     // Set the production url of your site here
@@ -25,7 +28,6 @@ const config: Config = {
     baseUrl: '/',
 
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
 
     presets: [
         [
