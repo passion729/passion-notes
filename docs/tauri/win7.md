@@ -19,6 +19,7 @@ pest="=2.8.0"
 pest_generator="=2.8.0"
 plist="=1.7.4"
 time-core="=0.1.4"
+indexmap = "=2.11.4"
 ```
 
 ## Tailwind CSS 4.0 Polyfill

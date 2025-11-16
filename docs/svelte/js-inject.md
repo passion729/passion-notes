@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 30
 ---
 
 # Inject local js file as npm package
