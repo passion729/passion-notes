@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
     title: "Passion's Notes",
     tagline: 'Dinosaurs are cool',
-    favicon: 'img/Snoopy.png',
+    favicon: 'img/snoopy.png',
     // themes: ['@docusaurus/theme-search-algolia'],
     // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
     future: {
