@@ -73,8 +73,8 @@ const config: Config = {
         navbar: {
             title: "Passion's Notes",
             logo: {
-                alt: "Snoopy",
-                src: 'img/Snoopy.png',
+                alt: "Avatar",
+                src: 'img/snoopy.png',
             },
             items: [
                 {
