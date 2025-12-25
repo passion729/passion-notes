@@ -103,7 +103,7 @@ const config: Config = {
         prism: {
             theme: prismThemes.nightOwlLight,
             darkTheme: prismThemes.oceanicNext,
-            additionalLanguages: ['rust', 'bash', 'toml', 'yaml'],
+            additionalLanguages: ['rust', 'bash', 'toml', 'yaml', 'swift'],
             magicComments: [
                 {
                     className: 'code-block-highlight-line',
