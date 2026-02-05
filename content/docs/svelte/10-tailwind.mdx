@@ -1,0 +1,34 @@
+---
+title: Tailwind 4.0
+---
+
+Automatic configuration:
+```npm
+bun x sv add tailwindcss
+```
+
+or in Vite: 
+```npm
+bun add tailwindcss @tailwindcss/vite
+```
+
+```javascript title="vite.config.js"
+import { defineConfig } from 'vite'
+// add
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [
+      // add
+    tailwindcss(),
+  ],
+})
+```
+
+```css title="app.css"
+@import "tailwindcss";
+```
+
+<Callout>
+    Remember to import `app.css` in `+layout` or `+page`.
+</Callout>

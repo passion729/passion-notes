@@ -1,0 +1,5 @@
+{
+    "pages": [
+        "llm", "svelte", "swift-ui", "tauri", "dev-env", "strange", "others"
+    ]
+}
