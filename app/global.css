@@ -2,6 +2,12 @@
 @import 'fumadocs-ui/css/vitepress.css';
 @import 'fumadocs-ui/css/preset.css';
 
+@layer base {
+  :root {
+    --font-sans: var(--font-noto-sans-sc), var(--font-nunito), system-ui, -apple-system, sans-serif;
+  }
+}
+
 :root {
     --fd-layout-width: 1800px;
 }
