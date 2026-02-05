@@ -77,25 +77,38 @@ html {
 }
 
 /* Webkit 浏览器（Chrome, Safari, Edge）的自定义滚动条 */
-::-webkit-scrollbar {
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+div:not(:has(pre))::-webkit-scrollbar,
+aside::-webkit-scrollbar,
+nav::-webkit-scrollbar {
     width: 6px;
-}
-
-::-webkit-scrollbar-track {
     background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+div:not(:has(pre))::-webkit-scrollbar-thumb,
+aside::-webkit-scrollbar-thumb,
+nav::-webkit-scrollbar-thumb {
     background: hsl(var(--border));
     border-radius: 9999px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover,
+div:not(:has(pre))::-webkit-scrollbar-thumb:hover,
+aside::-webkit-scrollbar-thumb:hover,
+nav::-webkit-scrollbar-thumb:hover {
     background: hsl(var(--border) / 0.8);
 }
 
 /* Firefox 的自定义滚动条 */
-* {
+html,
+body,
+div:not(:has(pre)),
+aside,
+nav {
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--border)) transparent;
 }
