@@ -29,9 +29,18 @@ export function getPageImage(page: InferPageType<typeof source>) {
 }
 
 export async function getLLMText(page: InferPageType<typeof source>) {
-    const processed = await page.data.getText('processed');
+    // Try to get raw content first, fallback to processed if not available
+    let content: string;
+    try {
+        content = await page.data.getText('raw');
+    } catch {
+        content = await page.data.getText('processed');
+    }
+
+    // Remove frontmatter if present (content between --- markers at the start)
+    content = content.replace(/^---\n[\s\S]*?\n---\n/, '');
 
     return `# ${ page.data.title }
 
-${ processed }`;
+${ content }`;
 }

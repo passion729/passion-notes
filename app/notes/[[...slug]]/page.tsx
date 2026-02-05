@@ -19,6 +19,7 @@ export default async function Page(props: PageProps<'/notes/[[...slug]]'>) {
     };
 
     const lastModifiedTime: Date | undefined = page.data.lastModified;
+    const markdownUrl = `/llms.mdx/docs/${params.slug?.join('/') || ''}`;
 
     return (
         <DocsPage
@@ -32,9 +33,9 @@ export default async function Page(props: PageProps<'/notes/[[...slug]]'>) {
             <DocsTitle>{page.data.title}</DocsTitle>
             <DocsDescription className="mb-0">{page.data.description}</DocsDescription>
             <div className="flex flex-row gap-2 items-center border-b pb-6">
-                <LLMCopyButton markdownUrl={`${page.url}.mdx`} />
+                <LLMCopyButton markdownUrl={markdownUrl} />
                 <ViewOptions
-                    markdownUrl={`${page.url}.mdx`}
+                    markdownUrl={markdownUrl}
                     // update it to match your repo
                     githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${page.path}`}
                 />
