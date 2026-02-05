@@ -6,9 +6,15 @@
     --fd-layout-width: 1800px;
 }
 
-h1 {
-    /*line-height: 1 !important;*/
+/*h1 {
+    line-height: 1 !important;
     margin-top: 3rem !important;
+}*/
+
+h2 {
+    /*line-height: 1 !important;*/
+    margin-top: 2rem !important;
+    margin-bottom: 0.7rem !important;
 }
 
 code {
@@ -57,3 +63,33 @@ aside button {
 /*    --color-fd-accent-foreground: hsl(0, 0%, 90%);*/
 /*    --color-fd-ring: hsl(0, 0%, 54.9%);*/
 /*}*/
+
+/* 自定义滚动条样式，与 sidebar 保持一致 */
+html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+}
+
+/* Webkit 浏览器（Chrome, Safari, Edge）的自定义滚动条 */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--border) / 0.8);
+}
+
+/* Firefox 的自定义滚动条 */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+}
