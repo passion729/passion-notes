@@ -25,7 +25,7 @@ export default async function Page(props: PageProps<'/notes/[[...slug]]'>) {
         <DocsPage
             toc={page.data.toc}
             full={page.data.full}
-            className="px-8 md:px-12 xl:px-24"
+            className="px-8 md:px-12 xl:px-16"
             tableOfContent={{
                 style: "clerk"
             }}
