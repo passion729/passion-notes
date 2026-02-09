@@ -3,6 +3,7 @@ import './global.css';
 import { Nunito, Noto_Sans_SC } from 'next/font/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { i18n } from '@/lib/i18n';
+import SearchDialog from '@/components/search';
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -21,7 +22,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="zh-CN" className={`${nunito.variable} ${notoSansSC.variable}`} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen font-sans">
-        <RootProvider i18n={i18n}>{children}</RootProvider>
+        <RootProvider search={{SearchDialog,}} i18n={i18n}>{children}</RootProvider>
         <SpeedInsights />
       </body>
     </html>
